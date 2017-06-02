@@ -2,4 +2,4 @@
 
 Used Netbeans IDE and Oracle(v 10g) as backend.
 
-Check Oracle file for oracle table commands
+Check "oracle database table creation commands" file for oracle table commands

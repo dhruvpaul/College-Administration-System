@@ -1,0 +1,17 @@
+create table login(loginid varchar2(6) primary key, name varchar2(20), password varchar2(15), type char(1))
+
+create table details(loginid varchar2(6), courseanddept varchar2(15), sex char(1), dob date, feesorsal number(10), foreign key(loginid) references login(loginid));
+
+create table modifyinfo(loginid varchar(2), comments varchar2(50), status char(1), foreign key (loginid) references login(loginid));
+
+create table attendance(loginid varchar2(6), adate date, foreign key (loginid) references login(loginid));
+
+create table fosdetails(loginid varchar2(6), lastpaid date, dues number(10), apay number(10), status char(1), foreign key(loginid) references login(loginid));
+
+create table feeshistory(loginid varchar(6),LASTPAID date,LPAID number(10),totalpaid number(10), foreign key(loginid) references login(loginid));
+
+create table assignments(loginid varchar2(6),comments varchar2(20), status char(1), given_by varchar2(6),courseanddept varchar2(15),adate date default sysdate, foreign key(loginid) references login(loginid));
+
+create table saldetails(loginid varchar2(6), adate date default sysdate, status char(1), foreign key(loginid) references login(loginid));
+
+create table salhistory(loginid varchar2(6), adate date default sysdate, foreign key(loginid) references login(loginid));
